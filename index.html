@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Background Remover</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <header>
+      <div class="logo">✂️</div>
+      <div>
+        <h1>AI Background Remover</h1>
+        <p>Remove backgrounds automatically with AI</p>
+      </div>
+    </header>
+
+    <section id="dropZone" class="drop-zone">
+      <div class="upload-icon">🖼️</div>
+
+      <h2>Import a photo</h2>
+
+      <p>
+        Choose an image and the AI will automatically remove its background.
+      </p>
+
+      <label class="upload-button">
+        Choose Photo
+        <input id="fileInput" type="file" accept="image/*" hidden>
+      </label>
+
+      <span class="small-text">
+        PNG • JPG • JPEG • WEBP
+      </span>
+    </section>
+
+    <section id="workspace" class="workspace hidden">
+
+      <div class="toolbar">
+        <div>
+          <strong id="fileName">Image</strong>
+          <span id="status">Ready</span>
+        </div>
+
+        <button id="removeButton" class="remove-button">
+          ✨ Remove Background
+        </button>
+      </div>
+
+      <div class="preview-grid">
+
+        <div class="preview-card">
+          <div class="card-title">Original</div>
+
+          <div class="image-container">
+            <img id="originalImage">
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <div class="card-title">Background Removed</div>
+
+          <div class="checker image-container">
+            <img id="resultImage">
+            <div id="emptyResult">
+              <span>✨</span>
+              <p>Your transparent image will appear here</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="progressArea" class="progress-area hidden">
+        <div class="progress-header">
+          <span id="progressText">Preparing AI...</span>
+          <span id="progressPercent">0%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="newImageButton" class="secondary">
+          ↩ Choose Another
+        </button>
+
+        <button id="downloadButton" class="download-button" disabled>
+          ⬇ Download Transparent PNG
+        </button>
+      </div>
+
+    </section>
+
+    <footer>
+      <span>🔒 Your image is processed in your browser.</span>
+      <span>•</span>
+      <span>AI-powered background removal</span>
+    </footer>
+
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
